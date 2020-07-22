@@ -771,6 +771,28 @@ functions:
                 id: true
 ```
 
+To map different values for request parameters, define the `required` and `mappedValue` properties of the request parameter.
+
+```yml
+functions:
+  create:
+    handler: posts.post_detail
+    events:
+      - http:
+          path: posts/{id}
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
+              headers:
+                custom-header:
+                  required: true
+                  mappedValue: context.requestId
+```
+
+For a list of acceptable values, see the [AWS Documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html)
+
 ### Request Schema Validators
 
 To use request schema validation with API gateway, add the [JSON Schema](https://json-schema.org/)
@@ -1716,3 +1738,37 @@ provider:
 ```
 
 Valid values are INFO, ERROR.
+
+If you want to disable access logging completly you can do with the following:
+
+```yml
+# serverless.yml
+provider:
+  name: aws
+  logs:
+    restApi:
+      accessLogging: true
+```
+
+By default, the full requests and responses data will be logged. If you want to disable like so:
+
+```yml
+# serverless.yml
+provider:
+  name: aws
+  logs:
+    restApi:
+      fullExecutionData: false
+```
+
+Websockets have the same configuration options as the the REST API. Example:
+
+```yml
+# serverless.yml
+provider:
+  name: aws
+  logs:
+    websoocket:
+      level: INFO
+      fullExecutionData: false
+```

@@ -10,6 +10,14 @@ Welcome, and thanks in advance for your help!
 
 # How to contribute to Serverless
 
+## Setup
+
+Once you've cloned forked repository, all is needed is to run `npm install` at its root folder
+
+## Anatomy of a Framework
+
+Check [docs/anatomy.md](./docs/anatomy.md)
+
 ## When you propose a new feature or bug fix
 
 Please make sure there is an open issue discussing your contribution before jumping into a Pull Request!
@@ -72,6 +80,19 @@ npm run lint
 
 - Minimize [lodash](https://lodash.com/) usage - resort to it, only if given part of logic cannot be expressed easily with native language constructs
 - Do not rely on custom [Bluebird](http://bluebirdjs.com) functions methods (aside of `Bluebird.try`) - we're looking forward to drop this dependency with next major.
+
+### Configuring deprecations
+
+Ideally all breaking changes should be first (before being shipped with next major) communicated with deprecation logs.
+
+Dprecation log can be configured with following steps:
+
+1. At logic point where deprecate feature is being used, write a deprecation log with `serverless._logDeprecation` util. It accepts two arguments:
+
+- `code` (e.g. `DEPRECATED_FEATURE_NAME`). Created to identify log programmatically, also used to construct link on documentation page
+- `mesage` Deprecation message to be displayed to user
+
+2. Document introduced deprecation at `docs/depreactions.md` (new deprecation should be listed as first, follow format of other documented deprecations)
 
 # Testing
 

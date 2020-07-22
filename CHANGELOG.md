@@ -2,6 +2,129 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.75.1](https://github.com/serverless/serverless/compare/v1.75.0...v1.75.1) (2020-07-16)
+
+### Bug Fixes
+
+- **CLI:** Ensure `--version` is only top level command option ([#7949](https://github.com/serverless/serverless/issues/7949)) ([1f7534c](https://github.com/serverless/serverless/commit/1f7534c4d89a0e37e61a8eea76f6f0241909d265)) ([Mariusz Nowak](https://github.com/medikoo))
+- **AWS Deploy:** Fix resolution of SLS_AWS_REQUEST_MAX_RETRIES setting ([da1b75a](https://github.com/serverless/serverless/commit/da1b75ac889f99a82afa5606e4e0f1f7f3ee2bcf)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.75.0](https://github.com/serverless/serverless/compare/v1.74.1...v1.75.0) (2020-07-15)
+
+### Features
+
+- **AWS HTTP API:**
+  - Allow use of CF ImportValue for httpApi id ([#7905](https://github.com/serverless/serverless/issues/7905)) ([5a444c4](https://github.com/serverless/serverless/commit/5a444c415ce31b2c219be47390be165a8da233ea)) ([Frédéric Barthelet](https://github.com/fredericbarthelet))
+  - Deprecate payload 1.0 default ([#7919](https://github.com/serverless/serverless/issues/7919)) ([ec954f6](https://github.com/serverless/serverless/commit/ec954f61220f48b379bf4903820bdbb7c2352caf)) ([andreizet](https://github.com/andreizet))
+- **AWS API Gateway:** Support integration mapping of request headers [#7897](https://github.com/serverless/serverless/issues/7897) ([56b335f](https://github.com/serverless/serverless/commit/56b335f99930aa9c2a35ce28e68dfea6d5bf3b7f)) ([Ben Arena](https://github.com/benarena))
+- **AWS Deploy:** Support customization of request retries count ([6c2fabf](https://github.com/serverless/serverless/commit/6c2fabf9b98fea921a497c7ad15f4943e78c9b73)) ([Mariusz Nowak](https://github.com/medikoo))
+- **Templates:**
+  - Improve TypeScript template ([#7934](https://github.com/serverless/serverless/issues/7934)) ([5e322c8](https://github.com/serverless/serverless/commit/5e322c87358cd33e7c703ae3ab5e9f1cf863c7e1)) ([Frédéric Barthelet](https://github.com/fredericbarthelet))
+  - Upgrade azure-nodejs template ([#7918](https://github.com/serverless/serverless/issues/7918)) ([a88cf00](https://github.com/serverless/serverless/commit/a88cf00ae7d306341771d9445f3aba6f06d46fa7)) ([Ian Anderson](https://github.com/getfatday))
+- Deprecate not maintained Node.js versions ([#7918](https://github.com/serverless/serverless/issues/7918)) ([a1f2fdb](https://github.com/serverless/serverless/commit/a1f2fdb5cf077a51d7427dd7fc803d6f60dd5cc9)) ([Mariusz Nowak](https://github.com/medikoo))
+- Expose `logDeprecation` through which plugins may signal deprecations [#7941](https://github.com/serverless/serverless/issues/7941) ([f444a8d](https://github.com/serverless/serverless/commit/f444a8d0a11434d89f1e2b2df5045850c45664c9)) ([Mariusz Nowak](https://github.com/medikoo))
+- Send list of sevice npm dependencies for notifications generator [#7940](https://github.com/serverless/serverless/issues/7940) ([dba0548](https://github.com/serverless/serverless/commit/dba05481d10d0ffbf198990c9b460bb0b0ad24d2)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Bug Fixes
+
+- **CLI:**
+  - Ensure to show help and version in context of invalid service [#7924](https://github.com/serverless/serverless/issues/7924) ([3ffa549](https://github.com/serverless/serverless/commit/3ffa54918342aeb9c334631c6f710aba234ba241)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Show interactive help unconditionally on `--help-interactive` [#7924](https://github.com/serverless/serverless/issues/7924) ([ff0af1e](https://github.com/serverless/serverless/commit/ff0af1e6ac8b89b4d610c141c78fe0fea843a5de)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Show version info unconditionally on `-v` or `--version` [#7924](https://github.com/serverless/serverless/issues/7924) ([c042dd5](https://github.com/serverless/serverless/commit/c042dd5144e4e283e565da97933d03bc70b3c8e9)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Communicate access to Components CLI [#7942](https://github.com/serverless/serverless/issues/7942) ([79b4718](https://github.com/serverless/serverless/commit/79b4718dec5de1d567af25d1abd0e46d87ff1c6e)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Ensure deprecation logs support mute settings from service config [#7941](https://github.com/serverless/serverless/issues/7941) ([4e69c76](https://github.com/serverless/serverless/commit/4e69c76e07a862981e8a9ea9011c98098c9da347)) ([Mariusz Nowak](https://github.com/medikoo))
+- **Templates:** Fix `PackageReference` in _aws-fsharp_ template ([#7914](https://github.com/serverless/serverless/issues/7914)) ([7848b6d](https://github.com/serverless/serverless/commit/7848b6d033ec4a7c64186e5f2306351128100be4)) ([Matt Davis](https://github.com/mattsonlyattack))
+- Improve error handling in config file resolution [#7924](https://github.com/serverless/serverless/issues/7924) ([de2c68d](https://github.com/serverless/serverless/commit/de2c68d02312f047aa7f83b0b339074b40df7854)) ([Mariusz Nowak](https://github.com/medikoo))
+- Throw operational error as operational [#7924](https://github.com/serverless/serverless/issues/7924) ([f965e44](https://github.com/serverless/serverless/commit/f965e446946048691889a7f3723c19ac747b8fe2)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Replace `_.concat` with `array.concat` ([#7851](https://github.com/serverless/serverless/issues/7851)) ([fce0b18](https://github.com/serverless/serverless/commit/fce0b1886448d91be21aa64b778c98d95bb47b87)) ([RT](https://github.com/RT1918))
+  - Replace `_.findKey` with `Object.keys(object).find` ([#7881](https://github.com/serverless/serverless/issues/7881)) ([d6cf036](https://github.com/serverless/serverless/commit/d6cf036c1647ce68d75b15e831e00f1cec6a97be)) ([Duc Nguyen](https://github.com/vietduc01100001))
+  - Replace `_.has` with better counterparts ([#7915](https://github.com/serverless/serverless/issues/7915)) ([7bbd04a](https://github.com/serverless/serverless/commit/7bbd04a6933c1631646f16670e3d85c357450e7a)) ([andreizet](https://github.com/andreizet))
+  - Replace `_.keyBy` with native constructs ([#7882](https://github.com/serverless/serverless/issues/7882)) ([e7163ce](https://github.com/serverless/serverless/commit/e7163ceaaceeb93971350b7ccd9cc618b15e4f9b)) ([Duc Nguyen](https://github.com/vietduc01100001))
+  - Replace `_.some` usage with `array.some` ([#7901](https://github.com/serverless/serverless/issues/7901)) ([75bf185](https://github.com/serverless/serverless/commit/75bf185785dc2b0a91b6500f353df92990e90f47)) ([Piotr Grzesik](https://github.com/pgrzesik))
+  - Replace `_.toString` with native `String` ([#7893](https://github.com/serverless/serverless/issues/7893)) ([028e467](https://github.com/serverless/serverless/commit/028e46720251901279b8230cf76deca721ee4ae6)) ([Anh Dev](https://github.com/anhdevit))
+
+### [1.74.1](https://github.com/serverless/serverless/compare/v1.74.0...v1.74.1) (2020-06-29)
+
+### Bug Fixes
+
+- **AWS Deploy:** Ensure no duplicate (case-insensitive) stack tags ([#7887](https://github.com/serverless/serverless/issues/7887)) ([71919f1](https://github.com/serverless/serverless/commit/71919f1d1f34386fa3429e3e47196c849218f82b)) ([MickVanDuijn](https://github.com/MickVanDuijn))
+- **Standalone:**
+  - Ensure reliable access from China ([#7891](https://github.com/serverless/serverless/issues/7891)) ([6fccede](https://github.com/serverless/serverless/commit/6fccedea4ac5a3a546d36b19d2e0701defd9ed85)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Support SLS_GEO_LOCATION env var ([#7891](https://github.com/serverless/serverless/issues/7891)) ([474df11](https://github.com/serverless/serverless/commit/474df11288a0431bb14947c4a08ae34edecb4164)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Remove `_.isInteger` ([#7878](https://github.com/serverless/serverless/issues/7878)) ([3b19a5a](https://github.com/serverless/serverless/commit/3b19a5a6b191fdb0dac5a81d1244159e0da9e0bd)) ([Dai Van Nguyen](https://github.com/nvdai2401))
+
+## [1.74.0](https://github.com/serverless/serverless/compare/v1.73.1...v1.74.0) (2020-06-26)
+
+### Features
+
+- **AWS ALB:** Support built-in authentication through `onUnauthenticatedRequest` ([#7780](https://github.com/serverless/serverless/issues/7780)) ([b976677](https://github.com/serverless/serverless/commit/b9766775148b15f8b19fd9d657149813cb5e8bfa)) ([Kamaz](https://github.com/kamaz))
+
+### Bug Fixes
+
+- **AWS HTTP API:** Respect logRetentionInDays setting ([#7856](https://github.com/serverless/serverless/issues/7856)) ([9dad77c](https://github.com/serverless/serverless/commit/9dad77ce1b12218f3c38b62c716d4dbc9d68bb5d)) ([Jonne Deprez](https://github.com/jonnedeprez))
+- **AWS Websocket:** Fix resources dependency chain ([9c0f646](https://github.com/serverless/serverless/commit/9c0f6461b73976958ebdd7e2762c6d1fbd469da1)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Remove `_.isBoolean` usage ([#7880](https://github.com/serverless/serverless/issues/7880)) ([57f70f9](https://github.com/serverless/serverless/commit/57f70f93eb3c24b802c842fb6e395591a70a3270)) ([Anh Dev](https://github.com/anhdevit))
+  - Replace `_.chain` with native constructs ([#7862](https://github.com/serverless/serverless/issues/7862)) ([288cb25](https://github.com/serverless/serverless/commit/288cb255acda29b15e10b10efcddee1b491a9b5d)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.compact` with `array.filter(Boolean)` ([#7858](https://github.com/serverless/serverless/issues/7858)) ([7e68a0c](https://github.com/serverless/serverless/commit/7e68a0c90f19ff9d8cfaab8f064628e72db2a054)) ([Çalgan Aygün](https://github.com/calganaygun))
+  - Replace `_.isEmpty` with native counterparts ([#7873](https://github.com/serverless/serverless/issues/7873)) ([4c33476](https://github.com/serverless/serverless/commit/4c33476210d355b9b822909685a951a4d970f467)) ([Dai Van Nguyen](https://github.com/nvdai2401))
+  - Replace `_.min` with native constructs ([#7840](https://github.com/serverless/serverless/issues/7840)) ([ee94dce](https://github.com/serverless/serverless/commit/ee94dce47ce989c7af2d54fc8c7dc24beab43ee8)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.parseInt` with `Number` ([#7877](https://github.com/serverless/serverless/issues/7877)) ([f2e1942](https://github.com/serverless/serverless/commit/f2e19420e9a639b1523958cb406d7bd178571248)) ([Dai Van Nguyen](https://github.com/nvdai2401))
+  - Replace `_.pullAllWith` with native constructs ([#7861](https://github.com/serverless/serverless/issues/7861)) ([f6743e9](https://github.com/serverless/serverless/commit/f6743e9b35bf821109ffb18039ea9cf419a7ad18)) ([Çalgan Aygün](https://github.com/calganaygun))
+  - Replace `_.reduce` with `array.reduce` ([#7883](https://github.com/serverless/serverless/issues/7883)) ([297f7d8](https://github.com/serverless/serverless/commit/297f7d85e07469f8157dfb6befb697f8dc0305d7)) ([Dai Van Nguyen](https://github.com/nvdai2401))
+  - Replace `_.sortBy` with `array.sort` ([#7823](https://github.com/serverless/serverless/issues/7823)) ([57e4212](https://github.com/serverless/serverless/commit/57e4212671ea3027fab9482e6006933e4c5b6c55)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+
+### [1.73.1](https://github.com/serverless/serverless/compare/v1.73.0...v1.73.1) (2020-06-16)
+
+### Bug Fixes
+
+- **AWS API Gateway:** Fix handling of `usagePlan` array ([85cc447](https://github.com/serverless/serverless/commit/85cc4476b35b144ed28e71302230df2d626a4e60)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.73.0](https://github.com/serverless/serverless/compare/v1.72.0...v1.73.0) (2020-06-16)
+
+### Features
+
+- **AWS Stream:** Add support for `maximumRecordAgeInSeconds` property ([#7833](https://github.com/serverless/serverless/issues/7833)) ([003fcfb](https://github.com/serverless/serverless/commit/003fcfb8fc1b083e01daa2e478086ee89e74c644)) ([Demián Rodriguez](https://github.com/demian85))
+- Drop old and support new analytics endpoint, display notifications as returned by backend ([#7811](https://github.com/serverless/serverless/issues/7811)) ([49b5914](https://github.com/serverless/serverless/commit/49b5914378038a9a35433e40233e9f49acd0e964)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Bug Fixes
+
+- **AWS SQS:** Revert support for `maximumRetryAttempts` option ([#7832](https://github.com/serverless/serverless/issues/7832)) ([5a5a986](https://github.com/serverless/serverless/commit/5a5a9864149e962375bb252adcaf32bbe10662da)) ([Mariusz Nowak](https://github.com/medikoo))
+- Ensure `serverless.ts` is handled properly at plugin commands ([#7806](https://github.com/serverless/serverless/issues/7806)) ([dc96b9a](https://github.com/serverless/serverless/commit/dc96b9a876b04e10ced474b7bb32416a204c67a3)) ([Bryan Hunter](https://github.com/bryan-hunter))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Replace `_.first`with `array[0]` ([#7816](https://github.com/serverless/serverless/issues/7816)) ([a527744](https://github.com/serverless/serverless/commit/a527744606a7dd9dd9caf0a376eb615f0b81a40f)) ([Chris Villanueva](https://github.com/chrisVillanueva))
+  - Replace `_.head` with `array[0]` ([#7817](https://github.com/serverless/serverless/issues/7817)) ([8991ceb](https://github.com/serverless/serverless/commit/8991ceb209884f72beba0ab8b166a258c0af3e1d)) ([Chris Villanueva](https://github.com/chrisVillanueva))
+  - Replace `_.includes` with `val.includes` ([#7818](https://github.com/serverless/serverless/issues/7818)) ([77fbb59](https://github.com/serverless/serverless/commit/77fbb5969b31bdd0d2220019f896df5a9f36e6fe)) ([Chris Villanueva](https://github.com/chrisVillanueva))
+  - Replace `_.indexOf` with `arr.includes` ([#7825](https://github.com/serverless/serverless/issues/7825)) ([332524d](https://github.com/serverless/serverless/commit/332524dae73cb102c244d3b568ec880f9bc816aa)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.isFunction` with `typeof value === 'function'` ([#7810](https://github.com/serverless/serverless/issues/7810)) ([e42ab2c](https://github.com/serverless/serverless/commit/e42ab2cda65d3986ce78f81da10c7149019162a2)) ([Wing-Kam](https://github.com/wingkwong))
+  - Replace `_.isNil(value)` with `value == null` ([#7809](https://github.com/serverless/serverless/issues/7809)) ([6cf4901](https://github.com/serverless/serverless/commit/6cf4901a8907ddfb36dc45ee1e094a7dff401360)) ([Wing-Kam](https://github.com/wingkwong))
+  - Replace `_.isString(value)` with `typeof value === 'string'` ([#7812](https://github.com/serverless/serverless/issues/7812)) ([9f3ee94](https://github.com/serverless/serverless/commit/9f3ee94a74a4d9d80451143a5f212d0b6f790a5f)) ([Wing-Kam](https://github.com/wingkwong))
+  - Replace `_.isUndefined` with native checks ([#7826](https://github.com/serverless/serverless/issues/7826)) ([20cef81](https://github.com/serverless/serverless/commit/20cef81555473311128ed425125d017c1ab6729c)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.join` with `array.join` ([#7805](https://github.com/serverless/serverless/issues/7805)) ([5cf46bf](https://github.com/serverless/serverless/commit/5cf46bf109287bcd327e6f45f58b3f392cc345de)) ([Chris Villanueva](https://github.com/chrisVillanueva))
+  - Replace `_.map` with `array.map` ([#7827](https://github.com/serverless/serverless/issues/7827)) ([4c6f8be](https://github.com/serverless/serverless/commit/4c6f8be5ccae88034e19f72a53996208dd4a56d5)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.nth` with `array[index]` ([#7841](https://github.com/serverless/serverless/issues/7841)) ([d5de0ec](https://github.com/serverless/serverless/commit/d5de0ec56aabff10ab6de8913b1b68730aa63fcd)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.repeat` with `string.repeat` ([#7842](https://github.com/serverless/serverless/issues/7842)) ([a549517](https://github.com/serverless/serverless/commit/a5495174413cead282dc09959ec251ee8444a06a)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.replace` with `string.replace` ([#7843](https://github.com/serverless/serverless/issues/7843)) ([aaa2f96](https://github.com/serverless/serverless/commit/aaa2f965a73ade5c691f0f935c5d37283ba7cd8a)) ([Nguyễn Việt Đức](https://github.com/vietduc01100001))
+  - Replace `_.split` with `string.split` ([#7820](https://github.com/serverless/serverless/issues/7820)) ([053f5f4](https://github.com/serverless/serverless/commit/053f5f420b45e9dec794e82d1bc23a2731a077ff)) ([srd2014](https://github.com/srd2014))
+  - Replace `_.takeRight` with `array.slice` ([#7831](https://github.com/serverless/serverless/issues/7831)) ([3b3db7a](https://github.com/serverless/serverless/commit/3b3db7ad29996e204bdef605d0c191cd610148d2)) ([Jishnu Mohan P R](https://github.com/jishnu-mohan))
+  - Replace `_.toUpper(string)` with `string.toUpperCase` ([#7808](https://github.com/serverless/serverless/issues/7808)) ([22a4ed2](https://github.com/serverless/serverless/commit/22a4ed27e262cbf13cb0df14df32a2c4bc2a0c9d)) ([Wing-Kam](https://github.com/wingkwong))
+  - Replace `_.unset` with `delete` ([#7813](https://github.com/serverless/serverless/issues/7813)) ([e39cdfd](https://github.com/serverless/serverless/commit/e39cdfdf02adba8b83f4bbf83208fdf81e32c1d7)) ([Chris Villanueva](https://github.com/chrisVillanueva))
+- Switch to `@serverless/util/config` ([#7811](https://github.com/serverless/serverless/issues/7811)) ([96afed4](https://github.com/serverless/serverless/commit/96afed438cde47a9fc75736ba22485ec90c7eb5a)) ([Mariusz Nowak](https://github.com/medikoo))
+
 ## [1.72.0](https://github.com/serverless/serverless/compare/v1.71.3...v1.72.0) (2020-06-02)
 
 ### Features
